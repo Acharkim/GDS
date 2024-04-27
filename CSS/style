@@ -1,0 +1,200 @@
+/* Reset some basic elements */
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+.sidebar{
+    background-color: #ffffff;
+}
+#sidebar::after {
+    content: "";
+    position: absolute;
+    right: 0; /* Aligner à droite de #sidebar */
+    top: 0;
+    bottom: 0;
+    width: 1px; /* Épaisseur de la ligne de séparation */
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(125,206,160), rgba(255, 255, 255, 0)); /* Dégradé vertical */
+}
+
+header, footer {
+    background-color: #7DCEA0; /* Couleur de fond verte */
+}
+
+header {
+    text-align: center;
+    padding: 3px;
+    color: #4A8962;
+}
+
+body > div {
+    flex-grow: 1;
+    display: flex;
+    width: 100%;
+    height: calc(100% - 60px); /* ajuster cette valeur selon la hauteur de votre header */
+
+}
+    
+#sidebar {
+    position: relative;
+    width: 300px;
+    color: black;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow: auto; /* Corrigez la typo 'over flow' à 'overflow' */
+    transition: background-color 0.3s, transform 0.3s; /* Ajout de transitions pour les effets */
+}
+#sidebar a {
+    display: block;
+    color: black;
+    text-decoration: none;
+    padding: 10px 20px;
+    margin: 5px 0;
+    transition: background-color 0.3s, transform 0.3s; /* Ajoute des transitions pour un effet doux */
+}
+
+#sidebar a:hover {
+    background-color: #3AA578; /* Change la couleur de fond au survol */
+    transform: translateX(10px); /* Déplace légèrement le lien vers la droite */
+}
+
+#sidebar a:active {
+    background-color: #3AA578; /* Change la couleur de fond lors du clic */
+    transform: translateX(-5px); /* Déplace légèrement le lien vers la gauche */
+}
+
+.sidebar-link {
+    padding: 10px;
+    display: block;
+    color: #ffffff; /* ou toute autre couleur de votre choix */
+    text-decoration: none; /* pour supprimer le soulignement par défaut des liens */
+    border-bottom: 1px solid transparent;
+    background-image: linear-gradient(to bottom, rgba(255,255,255,0), rgba(125,206,160), rgba(255,255,255,0));
+    background-repeat: no-repeat;
+    background-size: 100% 1px;
+    background-position: bottom;
+}
+#sidebar ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+#main-content {
+    background-color: white;
+    flex-grow: 1;
+    padding: 20px;
+    box-sizing: border-box;
+    width:100% ;
+    overflow: auto; /* Permet au contenu de défiler si nécessaire */
+}
+
+footer {
+    color: white;
+    text-align: center;
+    padding: 1px;
+    color: #333;
+    font-size:12px;
+}
+
+form {
+  max-width: 360px; /* Limite la largeur du formulaire */
+  margin: auto; /* Centre le formulaire horizontalement */
+  padding: 20px; /* Ajoute un peu d'espace à l'intérieur du formulaire */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Ajoute une ombre légère pour un effet en relief */
+  background: #fff; /* Fond blanc pour le formulaire */
+}
+
+input[type="text"], input[type="password"] {
+  width: 100%; /* Utilise toute la largeur disponible */
+  padding: 10px; /* Ajoute un espace interne pour faciliter la saisie */
+  margin: 8px 0; /* Ajoute de l'espace entre les champs */
+  box-sizing: border-box; /* S'assure que padding et border sont inclus dans la largeur */
+  border: 1px solid #ccc; /* Bordure discrète */
+  border-radius: 4px; /* Bordures arrondies pour les champs de texte */
+}
+
+input[type="submit"] {
+  width: 100%; /* Utilise toute la largeur disponible */
+  padding: 10px; /* Rend le bouton plus facile à cliquer */
+  background-color: #4CAF50; /* Couleur de fond verte pour le bouton, ajustez selon votre palette */
+  color: white; /* Texte blanc pour le bouton */
+  border: none; /* Pas de bordure */
+  border-radius: 4px; /* Bordures arrondies pour le bouton */
+  cursor: pointer; /* Change le curseur pour indiquer que c'est cliquable */
+}
+
+input[type="submit"]:hover {
+  background-color: #45a049; /* Un vert légèrement plus foncé au survol */
+}
+@media (max-width: 600px) {
+  form {
+    width: 90%; /* Rend le formulaire plus étroit sur les petits écrans */
+    padding: 10px; /* Moins de padding sur les petits écrans */
+  }
+  header h1 {
+        font-size: 24px; /* Taille de police plus petite pour les petits écrans */
+    }
+}
+.login-form {
+  background: #ffffff; /* Fond blanc pour le contraste */
+  padding: 40px;
+  margin: 50px auto;
+  width: 300px; /* Largeur spécifique pour le formulaire */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.login-form input[type="text"], .login-form input[type="password"] {
+  width: calc(100% - 20px); /* Utilise toute la largeur moins le padding */
+  padding: 10px;
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.login-form input[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  margin-top: 20px;
+  background-color: #4CAF50; /* Bouton de soumission vert */
+  color: white;
+  border: none;
+  border-radius: 4px;
+}
+
+.login-form input[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+
+.button-like {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none; /* Important pour les liens */
+    cursor: pointer; /* Indique que c'est un élément cliquable */
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.button-like:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+.button-like:active {
+    background-color: #398839;
+    transform: scale(0.95);
+}
